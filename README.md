@@ -86,7 +86,7 @@ You can use SynGPT in various ways. Here are some example use cases:
 
 #### Uploading text
 
-```python
+```
   register : To register with new username, password and email.
   login : Login with the created username and password.
   user_text : copy & paste the text.
