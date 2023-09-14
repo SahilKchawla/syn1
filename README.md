@@ -54,10 +54,18 @@ To use SynGPT, you'll need an API key from OpenAI. Follow these steps to get you
 
 3. Copy your API key.
 
-4. Set your API key as an environment variable on your local machine:
+4. Set your API key to api_keys.py and docker-compose.yml:
 
    ```shell
+   api_keys.py :
+     class ApiKey:
+        OPEN_API_KEY = "YOUR_API_KEY_HERE"
+
    export OPENAI_API_KEY=YOUR_API_KEY_HERE
+
+   docker_compose.yml :
+       environment:
+          OPENAI_API_KEY: "YOUR_API_KEY_HERE"
    ```
 
 ### Examples
@@ -66,41 +74,25 @@ You can use SynGPT in various ways. Here are some example use cases:
 
 #### Reading a PDF document
 
-```python
-from synGPT import SynGPT
-
-# Initialize the SynGPT instance
-syn_gpt = SynGPT()
-
-# Read a PDF document
-document_path = "path/to/your/document.pdf"
-syn_gpt.read_pdf(document_path)
-
-# Ask a question related to the document
-question = "What is the main topic of the document?"
-response = syn_gpt.ask_question(question)
-
-# Print the response
-print(response)
+```
+  register : To register with new username, password and email.
+  login : Login with the created username and password.
+  upload : Upload the document from the local folder.
+  process : Process the document.
+  summary : Get the summary regarding the uploaded pdf.
+  prompt : ask the questions regarding pdf to get the answers.
+  Logout : Logged out of the system.
 ```
 
 #### Uploading text
 
 ```python
-from synGPT import SynGPT
-
-# Initialize the SynGPT instance
-syn_gpt = SynGPT()
-
-# Upload text
-text = "This is some sample text that you can upload to SynGPT."
-syn_gpt.upload_text(text)
-
-# Ask a question related to the text
-question = "What is the main idea in the uploaded text?"
-response = syn_gpt.ask_question(question)
-
-# Print the response
-print(response)
+  register : To register with new username, password and email.
+  login : Login with the created username and password.
+  user_text : copy & paste the text.
+  process : Process the document.
+  summary : Get the summary regarding the uploaded pdf.
+  prompt : ask the questions regarding text to get the answers.
+  Logout : Logged out of the system.
 ```
 Please replace the placeholder text (e.g., `YOUR_API_KEY_HERE`) and customize the examples and usage instructions to match the specific details of your project. Additionally, consider adding more sections or information as needed to make your README file comprehensive and user-friendly.
